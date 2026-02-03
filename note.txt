@@ -1,0 +1,100 @@
+#package.json: it used totrack the dependencies what dependencies and thier version are doing.
+
+#package-lock.json: it is used to keep lock the used dependencies in node module in a stable version.
+
+#framework: a set of rules eg. express
+
+#npm init - for package json 
+
+#npm i/install express for installing express
+
+#to define a path first intialize it like (const path=require('path');)
+than define const loc=path.join(__dirname,'data','about.html'); // here file is in data folder insdide 
+main folder if not we can simply remove it.
+# Universal route for version 5 /.*/
+
+#Dynamic route:
+to acces multiple elements like products in e-commersce like product1,product2,product3...
+http://localhost:4000/product/3
+which element user want to access can be extract by req.params
+
+#to extract the content after ? use req.query
+http://localhost:4000/getmovie?name=avanger
+http://localhost:4000/getdata?name=rahul
+http://localhost:4000/getdata?x=miya
+
+server is running at port number 4000
+[Object: null prototype] { x: 'miya' }
+[Object: null prototype] { x: '56' }
+[Object: null prototype] {}
+[Object: null prototype] { name: 'avenger' }
+avenger
+[Object: null prototype] { name: 'avenger' }
+avenger
+
+#to send data from like database we use res.json() 
+eg. in App2 we are sending  movie data.
+
+#Sending templet(HTML file) via res :-
+first we can send the path of the html file by defining it than use re.sendFile() to send link.
+the file shoud be in same directory.
+
+* second way is ejs rendering:
+#npm i ejs
+set the view engine 
+app.set('view engine','ejs');
+first create a views folder in  main folder(App3 for eg) create the .ejs file same as html 
+than use res.render() and pass the file name ('xxx.ejs')
+
+we can render ejs file with internal and inline css but can not send wxternal css and javascript sol:
+
+Create a public folder and creaete subfolders for css and js and other kind of files. 
+# app.use(express.static(path.join(__dirname,'public')));
+we also have to store img or pdf or any files 
+create a public or whatever name and send that that folder to browser/frontend
+*we can also send data along with the ejs file.
+
+
+#GET and POST req:-
+GET:is used to retrieve the data 
+
+POST: is used to send/submit the data 
+
+action in form defines the route tp send the data 
+
+name atribute in input filed is used to show data in url after ? 
+eg. http://localhost:3000/dataform?name=Priyanshu+Sharma&email=yyy888%40gmail.com&password=123456
+
+
+
+#we can use same name route if using different requests like get/post
+
+//const {name, age, password, city} = req.body;
+// object structuring or we can write for each entity 
+// const username=req.body.username
+// const userage=req.body.userage
+// const userpassword=req.body.userpassword
+// const usercity=req.body.usercity
+
+in case of edit and delete we use a package called methodoverride becoz basic req get/post are not stdd convetion
+for delete and edit so we have to use put/delete
+npm install method-override
+
+
+#Q. how can you create server using node.js 
+#ans : To create server use http module @server.js 
+
+
+// Git/Github command
+commands:-
+for very first time
+git init 
+git add .
+git commit -m "msg"
+git remote add origin "Repo URl"
+git push origin master
+
+next time;
+git add . 
+git commit -m "msg"
+git push origin master

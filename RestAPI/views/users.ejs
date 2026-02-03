@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            width: 220px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .card p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is Users Page</h1>
+
+    <div class="container">
+        <% for (let user of users) { %>
+            <div class="card">
+                <h3><%= user.name %></h3>
+                <p>Age: <%= user.age %></p>
+                <p>City: <%= user.city %></p>
+                <a href="/users/<%= user.id %>">View Details</a>
+            </div>
+        <% } %>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="/users/newuser" style="text-decoration: none; color: #007BFF;">Add New User</a>
+    </div>
+</body>
+</html>

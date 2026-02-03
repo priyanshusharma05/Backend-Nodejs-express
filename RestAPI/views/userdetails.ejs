@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            width: 220px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .card p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <div class="card">
+                <h3><%= user.name %></h3>
+                <p>Age: <%= user.age %></p>
+                <p>City: <%= user.city %></p>
+                <p>Password: <%= user.password %></p>
+                <a href="/users/<%= user.id %>/edit">Edit Details</a>
+                <a href="/users/<%= user.id %>/delete">Delete User</a>
+            </div>
+            
+    </div>
+</body>
+</html>
